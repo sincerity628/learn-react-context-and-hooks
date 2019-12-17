@@ -42,3 +42,7 @@ nav ul li {
   margin: 10px auto;
   border-radius: 10px;
 }
+
+.log-part {
+  cursor: pointer;
+}
