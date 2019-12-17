@@ -1,5 +1,6 @@
 import React, { Component, createContext } from 'react';
 
+// the default value should be put inside the parenthesis
 export const ThemeContext = createContext();
 
 class ThemeContextProvider extends Component {
