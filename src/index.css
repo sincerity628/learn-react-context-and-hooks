@@ -5,4 +5,27 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #553055;
+}
+
+/* App classes */
+.App {
+  background-color: #4c2a4c;
+}
+
+.navbar {
+  max-width: 700px;
+  background-color: #6d3d6d;
+  color: #fff;
+  padding: 30px;
+  text-align: center;
+  margin: 20px auto;
+}
+
+.navbar h1 {
+  margin-top: 0;
+}
+
+.navbar p {
+  margin-bottom: 0;
 }
