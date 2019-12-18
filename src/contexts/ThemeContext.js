@@ -1,26 +1,23 @@
-import React, { Component, createContext } from 'react';
+import React, { createContext, useState } from 'react';
 
 // the default value should be put inside the parenthesis
 export const ThemeContext = createContext();
 
-class ThemeContextProvider extends Component {
-  state = {
-    isLight: true,
-    light: { syntax: '#555', ui: '#ddd', bg: '#eee' },
-    dark: { syntax: '#ddd', ui:'#333', bg: '#555'  }
-  }
+const ThemeContextProvider = (props) => {
+  const [isLight, setIsLight] = useState(true);
+  const light = { syntax: '#555', ui: '#ddd', bg: '#eee' };
+  const dark = { syntax: '#ddd', ui:'#333', bg: '#555' };
 
-  changeTheme = () => {
-    this.setState({ isLight: !this.state.isLight });
-  }
+  const changeTheme = () => {
+    setIsLight(!isLight);
+  };
 
-  render() {
-    return (
-      <ThemeContext.Provider value={{ ...this.state, changeTheme:this.changeTheme }}>
-        { this.props.children }
-      </ThemeContext.Provider>
-    );
-  }
+  return (
+    <ThemeContext.Provider value={{ isLight, light, dark, changeTheme }}>
+      { props.children }
+      <div onClick={changeTheme}></div>
+    </ThemeContext.Provider>
+  );
 }
 
 export default ThemeContextProvider;
