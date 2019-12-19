@@ -7,7 +7,7 @@ const initBook = {
 };
 
 const AddBookForm = () => {
-  const { addBook } = useContext(BookContext);
+  const { dispatch } = useContext(BookContext);
   const [book, setBook] = useState(initBook);
 
   const handleChange = e => {
@@ -19,16 +19,16 @@ const AddBookForm = () => {
 
   const handleSubmit = e => {
     e.preventDefault();
-    addBook(book.title, book.author);
+    dispatch({ type: 'ADD_BOOK', book });
     setBook(initBook);
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <input type="text" value={book.title} id="title" required
-        placeholder="title" onChange={handleChange} autocomplete="off" />
+        placeholder="title" onChange={handleChange} autoComplete="off" />
       <input type="text" value={book.author} id="author" required
-        placeholder="author" onChange={handleChange} autocomplete="off" />
+        placeholder="author" onChange={handleChange} autoComplete="off" />
       <div className="button-box">
         <button>add book</button>
       </div>
