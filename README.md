@@ -1,6 +1,5 @@
 ### learn-react-context-and-hooks
 
-### the frontend of blockchain-demo(from 2019 seminar)
 ---
 #### 下载项目文件
 ```
